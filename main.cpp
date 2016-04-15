@@ -42,6 +42,7 @@ void deck(Card * cards, int n)
 	//wyświetlenie ułożenia kart w talii
 	for (vector <Card *>::iterator iter=tempdeck.begin();iter != tempdeck.end();iter++)
 	{
+		
 		cout<<(*iter)->description()<<", ";
 		
 	}
