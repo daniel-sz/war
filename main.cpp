@@ -13,6 +13,7 @@ void deck(Card *, int);
 
 int main(int argc, char const *argv[])
 {
+	
 	srand(time(NULL));
 	Card *cards = new Card[52];
 	
@@ -35,8 +36,8 @@ void deck(Card * cards, int n)
 	stack <Card *> deck;
 	for (int i = 0, x; i < n; ++i)
 	{
-		deck.push(tempdeck.front());
-		tempdeck.erase(tempdeck.begin());
+		deck.push(tempdeck.back());
+		tempdeck.erase(tempdeck.end()-1);
 	}
 	
 	//wyświetlenie ułożenia kart w talii
@@ -69,5 +70,6 @@ void deck(Card * cards, int n)
 		//player2.pop();
 	}
 	cout<<endl;
-	cout<<player1.front()->compare(player2.front())<<endl;
+	char wynik=player1.front()->compare(player2.front());
+	cout<<"Wynik: "<<wynik<<endl;
 }
